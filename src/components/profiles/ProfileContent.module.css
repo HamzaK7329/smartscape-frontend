@@ -71,8 +71,10 @@
   display: inline-flex;
   align-items: center;
   gap: 10px;
-  padding: 5px 10px;
+  padding: 8px 12px;
   border-radius: 4px;
+  transition: background-color 0.3s ease, transform 0.1s ease, box-shadow 0.1s ease;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
 }
 
 .iconWithText span {
@@ -83,6 +85,11 @@
 
 .iconWithText:hover {
   background-color: #f0f0f0;
+}
+
+.iconWithText:active {
+  transform: translateY(2px);
+  box-shadow: 0 0 2px rgba(0, 0, 0, 0.1);
 }
 
 .signOutButton {
@@ -96,12 +103,18 @@
   border-radius: 4px;
   cursor: pointer;
   font-weight: bold;
-  transition: background-color 0.3s ease, color 0.3s ease;
+  transition: background-color 0.3s ease, color 0.3s ease, transform 0.1s ease, box-shadow 0.1s ease;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
 }
 
 .signOutButton:hover {
   background-color: #17402a;
   color: #fff;
+}
+
+.signOutButton:active {
+  transform: translateY(2px);
+  box-shadow: 0 0 2px rgba(0, 0, 0, 0.1);
 }
 
 /* Personal information styles */

@@ -15,8 +15,8 @@ const NavItem = ({ name, icon: Icon, activeNavItem, onClick, className }) => (
     className={`${styles.navItem} ${activeNavItem === name ? styles.activeNavItem : ""} ${className || ""}`}
     onClick={() => onClick(name)}
   >
-    {Icon && <Icon className={styles.icon} />}
     <span className={styles.navText}>{name}</span>
+    {Icon && <Icon className={styles.icon} />}
   </li>
 )
 
