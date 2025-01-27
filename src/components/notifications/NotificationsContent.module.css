@@ -1,0 +1,107 @@
+/* Main layout */
+.mainContent {
+  flex-grow: 1;
+  padding: 20px;
+  background-color: #fff;
+}
+
+.header {
+  color: #17402a;
+  font-size: 36px;
+  margin-bottom: 20px;
+}
+
+/* Section Styles */
+.section {
+  margin-bottom: 30px;
+}
+
+.sectionHeader {
+  font-size: 24px;
+  color: #17402a;
+  margin-bottom: 10px;
+}
+
+/* Preferences */
+.preferences {
+  display: flex;
+  flex-direction: column;
+  gap: 15px;
+}
+
+.preferenceItem {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+/* Silent Mode */
+.silentMode {
+  margin-top: 10px;
+}
+
+.silentHours {
+  display: flex;
+  gap: 10px;
+  margin-top: 10px;
+}
+
+.silentHours div {
+  display: flex;
+  flex-direction: column;
+}
+
+.silentHours label {
+  font-size: 14px;
+  color: #717171;
+}
+
+/* Notifications List */
+.notificationsList {
+  display: flex;
+  flex-direction: column;
+  gap: 15px;
+}
+
+.notificationItem {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 15px;
+  background-color: #a8b7ab;
+  border-radius: 5px;
+}
+
+.notificationLabel {
+  font-size: 18px;
+  font-weight: bold;
+  color: #17402a;
+}
+
+/* Toggle Button */
+.toggleButton {
+  all: unset;
+  font-size: 14px;
+  font-weight: bold;
+  text-transform: uppercase;
+  padding: 8px 15px;
+  border-radius: 4px;
+  cursor: pointer;
+  transition: background-color 0.3s ease, color 0.3s ease;
+}
+
+.toggleButton.active {
+  background-color: #17402a;
+  color: #fff;
+  border: 2px solid #17402a;
+}
+
+.toggleButton.inactive {
+  background-color: transparent;
+  color: #17402a;
+  border: 2px solid #17402a;
+}
+
+.toggleButton:hover {
+  opacity: 0.8;
+}

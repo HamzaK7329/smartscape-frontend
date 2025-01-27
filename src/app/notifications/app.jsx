@@ -1,7 +1,7 @@
 import React from 'react';
-import Navbar from '../../components/profiles/Navbar';
-import ProfileContent from '../../components/profiles/ProfileContent';
-import InfoPanel from '../../components/profiles/InfoPanel';
+import Navbar from '../../components/notifications/Navbar';
+import NotificationsContent from '../../components/notifications/NotificationsContent'
+import InfoPanel from '../../components/notifications/InfoPanel';
 import '../styles-as.css'; // Importing global styles under different name
 
 export default function App() {
@@ -9,8 +9,8 @@ export default function App() {
     <div className="container">
       <Navbar />
       <div className="mainContent">
-        <ProfileContent />
-        <InfoPanel />
+        <NotificationsContent />
+        
       </div>
     </div>
   );
