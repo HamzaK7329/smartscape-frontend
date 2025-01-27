@@ -8,12 +8,17 @@
 
 /* Main navbar container */
 .navbar {
-  max-width: 221px;
+  position: fixed; /* Fixes the navbar to the left side */
+  top: 0;
+  left: 0;
+  height: 100%; /* Full height to cover the viewport */
+  width: 221px; /* Matches the content margin-left */
   background: linear-gradient(180deg, #17402a 9%, #3ca66d 100%);
   padding: 20px;
   overflow-x: hidden;
   display: flex;
   flex-direction: column;
+  z-index: 1000; /* Ensures the navbar stays above other elements */
 }
 
 /* Navbar header section */
@@ -112,8 +117,13 @@
 /* Mobile styles */
 @media (max-width: 480px) {
   .navbar {
+    width: 100%; /* Full width for mobile */
+    height: auto; /* Adjust height for mobile */
     padding: 10px;
-    overflow: hidden;
+    position: fixed;
+    bottom: 0; /* Position navbar at the bottom for mobile */
+    top: auto; /* Override top position */
+    left: 0;
   }
 
   .navItem {
@@ -133,4 +143,3 @@
     display: none;
   }
 }
-

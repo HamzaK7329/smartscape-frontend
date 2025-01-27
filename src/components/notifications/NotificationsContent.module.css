@@ -1,5 +1,6 @@
 /* Main layout */
 .mainContent {
+  margin-left: 221px;
   flex-grow: 1;
   padding: 20px;
   background-color: #fff;
