@@ -1,9 +1,10 @@
 /* Logo styles */
 .smartScapeLogo {
   display: block;
-  width: 100%;
   max-width: 82px;
-  height: auto;
+  max-height: 67px;
+  width: auto; /* Keep aspect ratio */
+  height: auto; /* Keep aspect ratio */
 }
 
 /* Main navbar container */
