@@ -10,7 +10,7 @@
 /* Main navbar container */
 .navbar {
   max-width: 280px; /* Increased from 221px */
-  background: linear-gradient(180deg, #17402a 9%, #3ca66d 100%);
+  background: linear-gradient(180deg, #0A1630 9%, #152447 100%);
   padding: 24px; /* Increased from 20px */
   overflow-x: hidden;
   display: flex;
@@ -98,14 +98,14 @@
 .navItem:hover,
 .navItem:focus {
   background: #fff;
-  color: #17402a;
+  color: #0A1630;
   transform: scale(1.05);
 }
 
 /* Active nav item styles */
 .activeNavItem {
   background: #fff;
-  color: #17402a;
+  color: #0A1630;
   font-weight: bold;
 }
 
