@@ -1,65 +1,61 @@
-import React, { useState } from "react"
-import Image from "next/image"
-import {
-  MdPerson,
-  MdSecurity,
-  MdSettings,
-  MdNotifications,
-  MdDevices,
-  MdArrowBackIosNew,
-} from "react-icons/md"
+"use client"
+
+import { useState, useEffect } from "react"
+import { MdPerson, MdSecurity, MdSettings, MdNotifications, MdDevices, MdArrowBackIosNew } from "react-icons/md"
+import Link from "next/link"
+import { usePathname } from "next/navigation"
 import styles from "./Navbar.module.css"
 
-const NavItem = ({ name, icon: Icon, activeNavItem, onClick, className }) => (
-  <li
-    className={`${styles.navItem} ${activeNavItem === name ? styles.activeNavItem : ""} ${className || ""}`}
-    onClick={() => onClick(name)}
-  >
-    <span className={styles.navText}>{name}</span>
-    {Icon && <Icon className={styles.icon} />}
-  </li>
-)
+const navigation = [
+  { name: "Profiles", href: "#", icon: MdPerson },
+  { name: "Privacy & Security", href: "#", icon: MdSecurity },
+  { name: "Admin Settings", href: "#", icon: MdSettings },
+  { name: "Notifications", href: "#", icon: MdNotifications },
+  { name: "Rooms & Devices", href: "#", icon: MdDevices },
+  { name: "Back", href: "#", icon: MdArrowBackIosNew },
+]
 
 export default function Navbar() {
-  const [activeNavItem, setActiveNavItem] = useState("Profiles")
+  const pathname = usePathname()
+  const [time, setTime] = useState(new Date())
 
-  const navItems = [
-    { name: "Profiles", icon: MdPerson },
-    { name: "Privacy & Security", icon: MdSecurity },
-    { name: "Admin Settings", icon: MdSettings },
-    { name: "Notifications", icon: MdNotifications },
-    { name: "Rooms & Devices", icon: MdDevices },
-  ]
+  useEffect(() => {
+    const interval = setInterval(() => {
+      setTime(new Date())
+    }, 1000) // Update every second
 
-  const handleNavItemClick = (item) => setActiveNavItem(item)
+    return () => clearInterval(interval) // Cleanup on unmount
+  }, [])
 
-  const handleBackClick = () => {
-    console.log("Back button clicked")
-    // Add your back button functionality here
-  }
+  const hours = time.getHours() % 12 || 12
+  const minutes = time.getMinutes()
+  const ampm = time.getHours() >= 12 ? "PM" : "AM"
+
+  const timeString = `${hours.toString().padStart(2, "0")}:${minutes.toString().padStart(2, "0")} ${ampm}`
+
+  const dateString = time.toLocaleDateString("en-AE", {
+    weekday: "long", // e.g., "Wednesday"
+    day: "numeric",  // e.g., "3"
+    month: "short",  // e.g., "Feb"
+  })
 
   return (
-    <nav className={styles.navbar}>
-      <div className={styles.navHeader}>
-        <div className={styles.logoWrapper}>
-          <Image
-            className={styles.smartScapeLogo}
-            src="/logo-small.svg"
-            alt="smartscape logo"
-            width={82}
-            height={67}
-            priority
-          />
-          <button className={styles.backButton} onClick={handleBackClick} aria-label="Go back">
-            <MdArrowBackIosNew />
-          </button>
-        </div>
+    <div className={styles.navbar}>
+      <div className={styles.timeDisplay}>
+        <div className={styles.currentTime}>{timeString}</div>
+        <div className={styles.currentDate}>{dateString}</div>
       </div>
-      <ul className={styles.navList}>
-        {navItems.map(({ name, icon }) => (
-          <NavItem key={name} name={name} icon={icon} activeNavItem={activeNavItem} onClick={handleNavItemClick} />
-        ))}
-      </ul>
-    </nav>
+      <nav className={styles.navMenu}>
+        {navigation.map((item) => {
+          const isActive = pathname === item.href
+          return (
+            <Link key={item.name} href={item.href} className={`${styles.navLink} ${isActive ? styles.active : ""}`}>
+              <item.icon className={styles.icon} />
+              <span className={styles.navText}>{item.name}</span>
+            </Link>
+          )
+        })}
+      </nav>
+    </div>
   )
 }
