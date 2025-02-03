@@ -6,14 +6,14 @@
 }
 
 .header {
-  color: #0A1630;
+  color: var(--oxford-blue);
   font-size: 36px;
   margin-bottom: 20px;
 }
 
 /* Profile box styles */
 .profileBox {
-  background-color: var(--lavendar);
+  background-color: var(--lavender);
   padding: 15px;
   border-radius: 5px;
   margin-bottom: 20px;
@@ -80,7 +80,7 @@
 .iconWithText span {
   font-weight: bold;
   font-size: 16px;
-  color: #0A1630;
+  color: var(--oxford-blue);
 }
 
 .iconWithText:hover {
@@ -98,8 +98,8 @@
   margin-left: auto;
   padding: 8px 12px;
   background-color: transparent;
-  color: #0A1630;
-  border: 2px solid #0A1630;
+  color: var(--oxford-blue);
+  border: 2px solid var(--oxford-blue);
   border-radius: 4px;
   cursor: pointer;
   font-weight: bold;
@@ -108,7 +108,7 @@
 }
 
 .signOutButton:hover {
-  background-color: #0A1630;
+  background-color: var(--oxford-blue);
   color: #fff;
 }
 
@@ -120,7 +120,7 @@
 /* Personal information styles */
 .personalInfo {
   font-size: 24px;
-  color: #0A1630;
+  color: var(--oxford-blue);
 }
 
 .infoList {
