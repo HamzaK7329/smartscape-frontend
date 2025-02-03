@@ -1,6 +1,5 @@
 import React from "react";
-import Image from "next/image";
-import { MdOutlineMode, MdDeleteOutline, MdManageAccounts, MdSwitchAccount, MdPersonAddAlt1  } from "react-icons/md";
+import { MdOutlineMode, MdDeleteOutline, MdManageAccounts, MdSwitchAccount, MdPersonAddAlt1, MdAccountCircle  } from "react-icons/md";
 import styles from "./ProfileContent.module.css";
 
 export default function ProfileContent() {
@@ -20,14 +19,7 @@ export default function ProfileContent() {
 
         {/* Profile Info */}
         <div className={styles.profileInfo}>
-          <Image
-            className={styles.logo}
-            src="/user.svg"
-            alt="user"
-            width={52}
-            height={54}
-            priority
-          />
+        <MdAccountCircle className={styles.logo} size={54} aria-hidden="true" />
           <div className={styles.textContainer}>
             <p>Admin XYZ</p>
             <p>xyz1234@hw.ac.uk</p>
