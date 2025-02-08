@@ -1,6 +1,7 @@
 .weatherWidget {
   padding: 16px 32px;
   color: var(--text-primary);
+  background: rgba(210, 220, 245, 0.05);
   margin-top: auto;
   width: 100%;
   margin-left: -32px;
@@ -9,10 +10,6 @@
   display: flex;
   justify-content: space-between;
   align-items: center;
-}
-
-.weatherWidget:hover {
-  background: rgba(210, 220, 245, 0.05);
 }
 
 .leftContent {
