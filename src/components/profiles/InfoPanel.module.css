@@ -84,7 +84,54 @@
 /* Mobile-specific adjustments */
 @media (max-width: 480px) {
   .infoPanel {
-    margin-bottom: 80px; /* Extra space at the bottom on mobile */
+    margin: 0 auto; /* Remove top margin */
+    padding: 12px;
+    border: none;
+    box-shadow: none;
+    background-color: transparent;
+  }
+
+  .card {
+    gap: 4px; /* Reduce gap between items */
+    background-color: #f8f9fa;
+    padding: 8px; /* Reduce padding */
+    border-radius: 12px;
+    margin-bottom: 16px; /* Add bottom margin */
+  }
+
+  .section {
+    padding: 6px; /* Reduce padding */
+    background-color: transparent;
+    border-bottom: 1px solid rgba(0, 0, 0, 0.05);
+  }
+
+  .section:last-child {
+    border-bottom: none;
+  }
+
+  .toggleButton {
+    padding: 8px;
+    gap: 10px;
+  }
+
+  .toggleButton svg {
+    width: 24px;
+    height: 24px;
+  }
+
+  .toggleButton h2 {
+    font-size: 16px;
+    line-height: 1.25;
+  }
+
+  .paragraph {
+    font-size: 16px;
+    padding: 0 8px;
+  }
+
+  .paragraph.expanded {
+    padding: 8px;
+    margin-top: 8px;
   }
 }
 
