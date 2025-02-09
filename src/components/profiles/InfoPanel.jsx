@@ -7,9 +7,9 @@ import styles from "./InfoPanel.module.css"
 export default function InfoPanel() {
   const [isMobile, setIsMobile] = useState(false)
   const [expandedSections, setExpandedSections] = useState({
-    section1: false,
-    section2: false,
-    section3: false,
+    section1: true,
+    section2: true,
+    section3: true,
   })
 
   const sections = [
@@ -47,22 +47,6 @@ export default function InfoPanel() {
 
     return () => window.removeEventListener("resize", checkMobile)
   }, [])
-
-  useEffect(() => {
-    if (!isMobile) {
-      setExpandedSections({
-        section1: true,
-        section2: true,
-        section3: true,
-      })
-    } else {
-      setExpandedSections({
-        section1: false,
-        section2: false,
-        section3: false,
-      })
-    }
-  }, [isMobile])
 
   const toggleSection = (sectionId) => {
     setExpandedSections((prev) => ({

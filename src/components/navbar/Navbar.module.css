@@ -140,7 +140,7 @@
   }
 
   .weatherContainer {
-    margin: 0;
+    display: none;
   }
 }
 
