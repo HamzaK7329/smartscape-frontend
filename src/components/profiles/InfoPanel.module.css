@@ -68,7 +68,6 @@
   font-size: 16px; /* Reduced from 20px for better readability */
   max-height: 0;
   opacity: 0;
-  overflow: hidden;
   transition: all 0.3s ease-out;
   background-color: #F1F0F5;
 }
