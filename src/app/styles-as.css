@@ -34,6 +34,7 @@ html {
   display: flex;
   flex-direction: row;
   width: 100%;
+  overflow-x: hidden;
   overflow-y: auto; /* Allow scrolling within content */
 }
 
@@ -43,7 +44,6 @@ html {
     flex-direction: column;
     padding-top: 64px; /* Match navbar height */
     height: calc(100vh - 64px); /* Subtract navbar height */
-    overflow-y: auto;
   }
 
   .mainContent > * {
