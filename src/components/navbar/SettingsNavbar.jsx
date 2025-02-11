@@ -14,7 +14,7 @@ import {
 import Link from "next/link"
 import { usePathname } from "next/navigation"
 import { WeatherWidget } from "./Weather"
-import styles from "./Navbar.module.css"
+import styles from "./SettingsNavbar.module.css"
 
 const navigation = [
   { name: "Profiles", href: "#", icon: MdPerson },
@@ -25,7 +25,7 @@ const navigation = [
   { name: "Dashboard", href: "#", icon: MdArrowBackIosNew },
 ]
 
-export default function Navbar() {
+export default function SettingsNavbar() {
   const pathname = usePathname()
   const [time, setTime] = useState(new Date())
   const [isMenuOpen, setIsMenuOpen] = useState(false)
